@@ -106,7 +106,7 @@
             this.replaceButton.Location = new System.Drawing.Point(215, 200);
             this.replaceButton.Name = "replaceButton";
             this.replaceButton.Size = new System.Drawing.Size(85, 33);
-            this.replaceButton.TabIndex = 7;
+            this.replaceButton.TabIndex = 4;
             this.replaceButton.Text = "Replace";
             this.replaceButton.UseVisualStyleBackColor = true;
             // 
@@ -118,7 +118,7 @@
             this.browseButton.Margin = new System.Windows.Forms.Padding(5);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(85, 33);
-            this.browseButton.TabIndex = 6;
+            this.browseButton.TabIndex = 0;
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = true;
             // 
@@ -130,7 +130,7 @@
             this.label3.Location = new System.Drawing.Point(0, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 16);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 11;
             this.label3.Text = "Replace Text";
             // 
             // label2
@@ -141,7 +141,7 @@
             this.label2.Location = new System.Drawing.Point(0, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 16);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 10;
             this.label2.Text = "Target Text";
             // 
             // label1
@@ -152,7 +152,7 @@
             this.label1.Location = new System.Drawing.Point(0, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 16);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Select Folder*";
             // 
             // replaceTextBox
@@ -160,14 +160,14 @@
             this.replaceTextBox.Location = new System.Drawing.Point(141, 146);
             this.replaceTextBox.Name = "replaceTextBox";
             this.replaceTextBox.Size = new System.Drawing.Size(373, 23);
-            this.replaceTextBox.TabIndex = 2;
+            this.replaceTextBox.TabIndex = 3;
             // 
             // targetTextBox
             // 
             this.targetTextBox.Location = new System.Drawing.Point(141, 92);
             this.targetTextBox.Name = "targetTextBox";
             this.targetTextBox.Size = new System.Drawing.Size(373, 23);
-            this.targetTextBox.TabIndex = 1;
+            this.targetTextBox.TabIndex = 2;
             // 
             // repoPathTextBox
             // 
@@ -175,7 +175,7 @@
             this.repoPathTextBox.Location = new System.Drawing.Point(141, 38);
             this.repoPathTextBox.Name = "repoPathTextBox";
             this.repoPathTextBox.Size = new System.Drawing.Size(280, 23);
-            this.repoPathTextBox.TabIndex = 0;
+            this.repoPathTextBox.TabIndex = 1;
             // 
             // panel4
             // 
