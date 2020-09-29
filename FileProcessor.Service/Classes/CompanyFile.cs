@@ -1,9 +1,4 @@
 ﻿using FileProcessor.Service.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FileProcessor.Service.Classes
 {
@@ -13,6 +8,7 @@ namespace FileProcessor.Service.Classes
         public IFileTextReplacer Processer { get; set; }
         public IFileSaver Saver { get; set; }
 
+        // Converting a reference type to object is not a boxing conversion, it is a reference conversion.
         protected object document;
 
         public void Load(string path)
@@ -20,23 +16,29 @@ namespace FileProcessor.Service.Classes
             document = Loader.Load(path);
         }
 
-        public void ReplaceText(string matchString, string replaceString)
+        /// <summary>
+        /// Business logic: If we are replacing A with AB then recurring replacing call will generae ABBB...B
+        /// So if replaceString contains targetString, replace all replaceString with targetString then again do the reverse
+        /// </summary>
+        /// <param name="targetString"></param>
+        /// <param name="replaceString"></param>
+        public void ReplaceText(string targetString, string replaceString)
         {
-            if (replaceString.ToLower().Contains(matchString.ToLower()))
+            if (replaceString.ToLower().Contains(targetString.ToLower()))
             {
-                // matchingStrig = Software People, replaceString = Software People Bangladesh
+                // targetString = Software People, replaceString = Software People Bangladesh
                 // First replace all "Software People Bangladesh" with "Software People"
-                Processer.ReplaceText(document, replaceString: matchString, matchString: replaceString);
+                Processer.ReplaceText(document, replaceString: targetString, matchString: replaceString);
 
                 // After that replace all "Software People" with "Software People Bangladesh"
             }
 
-            Processer.ReplaceText(document, matchString, replaceString);
+            Processer.ReplaceText(document, targetString, replaceString);
         }
 
         public void Save(string path)
         {
-            Saver.Save(document,path);
+            Saver.Save(document, path);
         }
     }
 }
