@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FileProcessor
 {
-  public partial class Form1 : Form
+  public partial class FileProcessorForm : Form
   {
-    public Form1()
+    public FileProcessorForm()
     {
       InitializeComponent();
     }
