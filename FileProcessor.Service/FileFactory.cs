@@ -15,8 +15,8 @@ namespace FileProcessor.Service
             
             switch (fileExtention.ToLower())
             {
-                case "doc":
-                case "docx":
+                case ".doc":
+                case ".docx":
                     return new DocFile();
                 default:
                     // This file type not supported, so continue for next file

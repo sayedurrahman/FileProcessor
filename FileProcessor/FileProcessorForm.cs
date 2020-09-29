@@ -14,7 +14,8 @@ namespace FileProcessor
   {
     public FileProcessorForm()
     {
-      InitializeComponent();
+        InitializeComponent();
+        new Service.FileProcessorController("G:\\Delete2").UpdateCompanyName();
     }
 
   }
