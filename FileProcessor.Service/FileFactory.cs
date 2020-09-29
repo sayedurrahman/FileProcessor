@@ -11,9 +11,9 @@ namespace FileProcessor.Service
 {
     public static class FileFactory
     {
-        public static CompanyFile GetInstance(string fileName){
-            FileInfo fileInfo = new FileInfo(fileName);
-            switch (fileInfo.Extension.ToLower())
+        public static CompanyFile GetInstance(string fileExtention){
+            
+            switch (fileExtention.ToLower())
             {
                 case "doc":
                 case "docx":
