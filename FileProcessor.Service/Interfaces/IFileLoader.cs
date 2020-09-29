@@ -8,6 +8,6 @@ namespace FileProcessor.Service.Interfaces
 {
     public interface IFileLoader
     {
-        dynamic Load();
+        object Load(string filePath);
     }
 }

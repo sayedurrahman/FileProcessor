@@ -8,6 +8,6 @@ namespace FileProcessor.Service.Interfaces
 {
     public interface IFileSaver
     {
-        void Save();
+        void Save(object document, string fileName);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FileProcessor.Service.Interfaces;
+using Spire.Doc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,10 @@ namespace FileProcessor.Service.Classes
 {
     public class DocFileSaver : IFileSaver
     {
-        public void Save()
+        public void Save(object document, string fileName)
         {
-            throw new NotImplementedException();
+            Document doc = (Document)document;
+            doc.SaveToFile(fileName, FileFormat.Docx);
         }
     }
 }

@@ -3,3 +3,5 @@ FileProcessor/obj/
 FileProcessor/.vs/
 FileProcessor.Service/obj/
 FileProcessor/packages/
+FileProcessor/bin/
+FileProcessor.Service/bin/

@@ -10,17 +10,10 @@ namespace FileProcessor.Service.Classes
 {
     public class DocFileProcessor : IFileProcessor
     {
-        private string MatchString { get; set; }
-        private string ReplaceString { get; set; }
-        public DocFileProcessor(string matchString, string replaceString)
+        public void RenameText(object document, string matchString, string replaceString)
         {
-            MatchString = matchString;
-            ReplaceString = replaceString;
-        }
-
-        public void Process(dynamic document)
-        {
-            document.Replace(MatchString, ReplaceString, false, true);
+            Document doc= (Document)document;
+            doc.Replace(matchString, replaceString, false, true);
         }
     }
 }

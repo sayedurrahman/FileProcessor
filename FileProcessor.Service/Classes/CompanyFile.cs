@@ -13,7 +13,7 @@ namespace FileProcessor.Service.Classes
         public IFileProcessor Processer { get; set; }
         public IFileSaver Saver { get; set; }
 
-        protected dynamic document;
+        protected object document;
 
         public void Load(string path)
         {
@@ -27,14 +27,16 @@ namespace FileProcessor.Service.Classes
                 // matchingStrig = Software People, replaceString = Software People Bangladesh
                 // First replace all "Software People Bangladesh" with "Software People"
                 Processer.RenameText(document, replaceString: matchString, matchString: replaceString);
+
+                // After that replace all "Software People" with "Software People Bangladesh"
             }
 
             Processer.RenameText(document, matchString, replaceString);
         }
 
-        public void Save()
+        public void Save(string path)
         {
-            Saver.Save();
+            Saver.Save(document,path);
         }
     }
 }

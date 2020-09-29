@@ -11,8 +11,8 @@ namespace FileProcessor.Service.Classes
     {
         public DocFile()
         {
-            Loader = new DocFileLoader(path);
-            Processer = new DocFileProcessor(matchString, replaceString);
+            Loader = new DocFileLoader();
+            Processer = new DocFileProcessor();
             Saver = new DocFileSaver();
         }
     }

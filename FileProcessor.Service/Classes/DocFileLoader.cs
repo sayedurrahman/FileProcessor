@@ -11,16 +11,10 @@ namespace FileProcessor.Service.Classes
 {
     public class DocFileLoader : IFileLoader
     {
-        private string Path { get; set; }
-        public DocFileLoader(string path)
-        {
-            Path = path;
-        }
-
-        public dynamic Load()
+        public object Load(string filePath)
         {
             Document document = new Document();
-            document.LoadFromFile(Path);
+            document.LoadFromFile(filePath);
             return document;
         }
     }

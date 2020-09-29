@@ -33,7 +33,7 @@ namespace FileProcessor.Service
                     {
                         file.Load(fileInfo.FullName);
                         file.ReplaceText(MatchString, ReplaceString);
-                        file.Save();
+                        file.Save(fileInfo.FullName);
                     }
                 }
             }
