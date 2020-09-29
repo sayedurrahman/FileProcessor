@@ -14,6 +14,7 @@ namespace FileProcessor.Service.Classes
         {
             Document doc = (Document)document;
             doc.SaveToFile(fileName, FileFormat.Docx);
+            doc.Dispose();
         }
     }
 }
