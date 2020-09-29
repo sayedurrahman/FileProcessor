@@ -17,12 +17,12 @@ namespace FileProcessor
             InitializeComponent();
         }
 
-        private void replaceButton_Click(object sender, EventArgs e)
+        private async void replaceButton_Click(object sender, EventArgs e)
         {
             string targetString = string.IsNullOrWhiteSpace(targetTextBox.Text) ? "Software People" : targetTextBox.Text;
             string replaceString = string.IsNullOrWhiteSpace(replaceTextBox.Text) ? "Software People Bangladesh" : replaceTextBox.Text;
             var controller = new Service.FileProcessorController(repoFolderBrowserDialog.SelectedPath, targetString, replaceString);
-            controller.UpdateCompanyName();
+            await Task.Run(() => controller.UpdateCompanyName());
             Reset();
         }
 

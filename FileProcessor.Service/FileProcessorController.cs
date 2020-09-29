@@ -21,7 +21,7 @@ namespace FileProcessor.Service
             ReplaceString = newCompanyName;
         }
 
-        public void UpdateCompanyName()
+        public async void UpdateCompanyName()
         {
             if (Directory.Exists(RepositoryPath))
             {
