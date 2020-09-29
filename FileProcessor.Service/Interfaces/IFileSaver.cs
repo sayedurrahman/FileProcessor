@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileProcessor.Service.Interfaces
 {
-    interface IFileSaver
+    public interface IFileSaver
     {
         void Save();
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileProcessor.Service.Interfaces
 {
-    interface IFileProcesser
+    public interface IFileProcessor
     {
         void Process();
     }

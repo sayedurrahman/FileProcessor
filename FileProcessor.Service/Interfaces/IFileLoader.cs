@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FileProcessor.Service.Interfaces
 {
-    interface IFileLoader
+    public interface IFileLoader
     {
-        void Load();
+        dynamic Load();
     }
 }
