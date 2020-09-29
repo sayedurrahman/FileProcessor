@@ -1,5 +1,5 @@
 ﻿using FileProcessor.Service.Interfaces;
-using Microsoft.Office.Interop.Word;
+using Spire.Doc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +10,17 @@ namespace FileProcessor.Service.Classes
 {
     public class DocFileProcessor : IFileProcessor
     {
-        public void Process()
+        private string MatchString { get; set; }
+        private string ReplaceString { get; set; }
+        public DocFileProcessor(string matchString, string replaceString)
         {
-            
+            MatchString = matchString;
+            ReplaceString = replaceString;
+        }
+
+        public void Process(dynamic document)
+        {
+            document.Replace(MatchString, ReplaceString, false, true);
         }
     }
 }

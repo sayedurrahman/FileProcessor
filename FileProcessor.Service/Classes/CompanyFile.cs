@@ -15,14 +15,21 @@ namespace FileProcessor.Service.Classes
 
         protected dynamic document;
 
-        public void Load()
+        public void Load(string path)
         {
-            document = Loader.Load();
+            document = Loader.Load(path);
         }
 
-        public void Process()
+        public void ReplaceText(string matchString, string replaceString)
         {
-            Processer.Process();
+            if (replaceString.ToLower().Contains(matchString.ToLower()))
+            {
+                // matchingStrig = Software People, replaceString = Software People Bangladesh
+                // First replace all "Software People Bangladesh" with "Software People"
+                Processer.RenameText(document, replaceString: matchString, matchString: replaceString);
+            }
+
+            Processer.RenameText(document, matchString, replaceString);
         }
 
         public void Save()

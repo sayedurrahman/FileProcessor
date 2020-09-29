@@ -1,6 +1,7 @@
 ﻿using FileProcessor.Service.Interfaces;
+using Spire.Doc;
+using Spire.Pdf.Exporting.XPS.Schema;
 using System;
-using Microsoft.Office.Interop.Word;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +11,17 @@ namespace FileProcessor.Service.Classes
 {
     public class DocFileLoader : IFileLoader
     {
+        private string Path { get; set; }
+        public DocFileLoader(string path)
+        {
+            Path = path;
+        }
+
         public dynamic Load()
         {
-            Application ap = new Application();
-            return ap.Documents.Open(@"C:\Test\NewDocument.docx");
-            
+            Document document = new Document();
+            document.LoadFromFile(Path);
+            return document;
         }
     }
 }

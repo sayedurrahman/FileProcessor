@@ -1,5 +1,4 @@
 ﻿using FileProcessor.Service.Interfaces;
-using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +11,9 @@ namespace FileProcessor.Service.Classes
     {
         public DocFile()
         {
-            Loader = new DocFileLoader();
-            Processer = new DocFileProcessor();
+            Loader = new DocFileLoader(path);
+            Processer = new DocFileProcessor(matchString, replaceString);
             Saver = new DocFileSaver();
-        }        
+        }
     }
 }

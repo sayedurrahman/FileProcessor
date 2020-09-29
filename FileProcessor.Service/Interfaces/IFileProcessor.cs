@@ -8,6 +8,6 @@ namespace FileProcessor.Service.Interfaces
 {
     public interface IFileProcessor
     {
-        void Process();
+        void RenameText(dynamic document, string matchString, string replaceString);
     }
 }
