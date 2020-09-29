@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FileProcessor.Service.Interfaces
 {
-    public interface IFileProcessor
+    public interface IFileTextReplacer
     {
-        void RenameText(object document, string matchString, string replaceString);
+        void ReplaceText(object document, string matchString, string replaceString);
     }
 }

@@ -10,7 +10,7 @@ namespace FileProcessor.Service.Classes
     public class CompanyFile
     {
         public IFileLoader Loader { get; set; }
-        public IFileProcessor Processer { get; set; }
+        public IFileTextReplacer Processer { get; set; }
         public IFileSaver Saver { get; set; }
 
         protected object document;
@@ -26,12 +26,12 @@ namespace FileProcessor.Service.Classes
             {
                 // matchingStrig = Software People, replaceString = Software People Bangladesh
                 // First replace all "Software People Bangladesh" with "Software People"
-                Processer.RenameText(document, replaceString: matchString, matchString: replaceString);
+                Processer.ReplaceText(document, replaceString: matchString, matchString: replaceString);
 
                 // After that replace all "Software People" with "Software People Bangladesh"
             }
 
-            Processer.RenameText(document, matchString, replaceString);
+            Processer.ReplaceText(document, matchString, replaceString);
         }
 
         public void Save(string path)

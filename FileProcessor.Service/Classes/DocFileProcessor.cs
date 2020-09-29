@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FileProcessor.Service.Classes
 {
-    public class DocFileProcessor : IFileProcessor
+    public class DocFileProcessor : IFileTextReplacer
     {
-        public void RenameText(object document, string matchString, string replaceString)
+        public void ReplaceText(object document, string matchString, string replaceString)
         {
             Document doc= (Document)document;
             doc.Replace(matchString, replaceString, false, true);
