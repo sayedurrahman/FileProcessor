@@ -45,6 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.repoFolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -225,6 +226,11 @@
             this.panel3.Size = new System.Drawing.Size(135, 246);
             this.panel3.TabIndex = 0;
             // 
+            // repoFolderBrowserDialog
+            // 
+            this.repoFolderBrowserDialog.Description = "Select Folder";
+            this.repoFolderBrowserDialog.ShowNewFolderButton = false;
+            // 
             // FileProcessorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -265,6 +271,7 @@
         private System.Windows.Forms.TextBox repoPathTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.FolderBrowserDialog repoFolderBrowserDialog;
     }
 }
 

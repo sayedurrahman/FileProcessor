@@ -15,18 +15,17 @@ namespace FileProcessor
         public FileProcessorForm()
         {
             InitializeComponent();
-            new Service.FileProcessorController("G:\\Delete2").UpdateCompanyName();
+        }
+
+        private void replaceButton_Click(object sender, EventArgs e)
+        {
+            new Service.FileProcessorController(repoFolderBrowserDialog.SelectedPath).UpdateCompanyName();
         }
 
         private void browseButton_Click(object sender, EventArgs e)
         {
             ShowFolderBrowsedDialog();
-        }
-
-        private void replaceButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void repoPathTextBox_Click(object sender, EventArgs e)
         {
@@ -35,16 +34,9 @@ namespace FileProcessor
 
         private void ShowFolderBrowsedDialog()
         {
-            FolderBrowserDialog fbd = new FolderBrowserDialog
+            if (repoFolderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
-                RootFolder = Environment.SpecialFolder.Desktop,
-                Description = "Select Folder",
-                ShowNewFolderButton = false
-            };
-
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                repoPathTextBox.Text = fbd.SelectedPath;
+                repoPathTextBox.Text = repoFolderBrowserDialog.SelectedPath;
                 replaceButton.Enabled = true;
                 targetTextBox.Focus();
             }
