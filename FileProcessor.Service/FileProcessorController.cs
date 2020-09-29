@@ -17,19 +17,17 @@ namespace FileProcessor.Service
         }
         
         public void UpdateCompanyName(){
-            // open repo
-            // get file list
-            // foreach file
-            FileInfo fileInfo = new FileInfo("");
-            CompanyFile file = FileFactory.GetInstance(fileInfo);
-            file.Load();
-            file.Process();
-            file.Save();
-
+            if(Directory.Exists(RepositoryPath)){
+                foreach(string fileName in Directory.GetFiles(RepositoryPath)){
+                    CompanyFile file = FileFactory.GetInstance(fileName);
+                    if (file != null)
+                    {
+                        file.Load();
+                        file.Process();
+                        file.Save();
+                    }
+                }
+            }
         }
-
-
-
-
     }
 }

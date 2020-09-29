@@ -51,7 +51,7 @@
     <Compile Include="Classes\DocFileSaver.cs" />
     <Compile Include="FileFactory.cs" />
     <Compile Include="FileProcessorController.cs" />
-    <Compile Include="Interfaces\CompanyFile.cs" />
+    <Compile Include="Classes\CompanyFile.cs" />
     <Compile Include="Interfaces\IFileProcessor.cs" />
     <Compile Include="Interfaces\IFileSaver.cs" />
     <Compile Include="Interfaces\IFileLoader.cs" />
