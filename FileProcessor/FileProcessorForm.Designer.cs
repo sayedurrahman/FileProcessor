@@ -101,6 +101,7 @@
             // 
             // replaceButton
             // 
+            this.replaceButton.Enabled = false;
             this.replaceButton.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.replaceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(71)))), ((int)(((byte)(237)))));
             this.replaceButton.Location = new System.Drawing.Point(215, 200);
@@ -109,6 +110,7 @@
             this.replaceButton.TabIndex = 4;
             this.replaceButton.Text = "Replace";
             this.replaceButton.UseVisualStyleBackColor = true;
+            this.replaceButton.Click += new System.EventHandler(this.replaceButton_Click);
             // 
             // browseButton
             // 
@@ -121,6 +123,7 @@
             this.browseButton.TabIndex = 0;
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = true;
+            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
             // 
             // label3
             // 
@@ -157,25 +160,30 @@
             // 
             // replaceTextBox
             // 
+            this.replaceTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.replaceTextBox.Location = new System.Drawing.Point(141, 146);
             this.replaceTextBox.Name = "replaceTextBox";
-            this.replaceTextBox.Size = new System.Drawing.Size(373, 23);
+            this.replaceTextBox.PlaceholderText = "Software People Bangladesh (Default)";
+            this.replaceTextBox.Size = new System.Drawing.Size(373, 25);
             this.replaceTextBox.TabIndex = 3;
             // 
             // targetTextBox
             // 
+            this.targetTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.targetTextBox.Location = new System.Drawing.Point(141, 92);
             this.targetTextBox.Name = "targetTextBox";
-            this.targetTextBox.Size = new System.Drawing.Size(373, 23);
+            this.targetTextBox.PlaceholderText = "Software People (Default)";
+            this.targetTextBox.Size = new System.Drawing.Size(373, 25);
             this.targetTextBox.TabIndex = 2;
             // 
             // repoPathTextBox
             // 
-            this.repoPathTextBox.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.repoPathTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.repoPathTextBox.Location = new System.Drawing.Point(141, 38);
             this.repoPathTextBox.Name = "repoPathTextBox";
-            this.repoPathTextBox.Size = new System.Drawing.Size(280, 23);
+            this.repoPathTextBox.Size = new System.Drawing.Size(280, 25);
             this.repoPathTextBox.TabIndex = 1;
+            this.repoPathTextBox.Click += new System.EventHandler(this.repoPathTextBox_Click);
             // 
             // panel4
             // 
