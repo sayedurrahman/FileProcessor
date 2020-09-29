@@ -12,7 +12,7 @@ namespace FileProcessor.Service.Classes
         public DocFile()
         {
             Loader = new DocFileLoader();
-            Processer = new DocFileProcessor();
+            Processer = new DocFileTextReplacer();
             Saver = new DocFileSaver();
         }
     }

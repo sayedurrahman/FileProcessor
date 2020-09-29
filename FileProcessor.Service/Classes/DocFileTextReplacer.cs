@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FileProcessor.Service.Classes
 {
-    public class DocFileProcessor : IFileTextReplacer
+    public class DocFileTextReplacer : IFileTextReplacer
     {
         public void ReplaceText(object document, string matchString, string replaceString)
         {

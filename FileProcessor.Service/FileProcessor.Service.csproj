@@ -53,7 +53,7 @@
   <ItemGroup>
     <Compile Include="Classes\DocFile.cs" />
     <Compile Include="Classes\DocFileLoader.cs" />
-    <Compile Include="Classes\DocFileProcessor.cs" />
+    <Compile Include="Classes\DocFileTextReplacer.cs" />
     <Compile Include="Classes\DocFileSaver.cs" />
     <Compile Include="FileFactory.cs" />
     <Compile Include="FileProcessorController.cs" />
