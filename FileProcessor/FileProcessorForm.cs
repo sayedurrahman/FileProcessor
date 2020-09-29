@@ -19,7 +19,11 @@ namespace FileProcessor
 
         private void replaceButton_Click(object sender, EventArgs e)
         {
-            new Service.FileProcessorController(repoFolderBrowserDialog.SelectedPath).UpdateCompanyName();
+            string targetString = string.IsNullOrWhiteSpace(targetTextBox.Text) ? "Software People" : targetTextBox.Text;
+            string replaceString = string.IsNullOrWhiteSpace(replaceTextBox.Text) ? "Software People Bangladesh" : replaceTextBox.Text;
+            var controller = new Service.FileProcessorController(repoFolderBrowserDialog.SelectedPath, targetString, replaceString);
+            controller.UpdateCompanyName();
+            Reset();
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -45,6 +49,14 @@ namespace FileProcessor
                 repoPathTextBox.Text = "";
                 replaceButton.Enabled = false;
             }
+        }
+
+        private void Reset() 
+        {
+            repoFolderBrowserDialog.SelectedPath = "";
+            repoPathTextBox.Text = "";
+            targetTextBox.Text = "";
+            replaceTextBox.Text = "";
         }
     }
 }

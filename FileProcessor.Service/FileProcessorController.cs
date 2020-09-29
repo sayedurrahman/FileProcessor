@@ -14,7 +14,7 @@ namespace FileProcessor.Service
         public string RepositoryPath { get; set; }
         public string MatchString { get; set; }
         public string ReplaceString { get; set; }
-        public FileProcessorController(string repositoryPath, string oldCompanyName = "Software People", string newCompanyName = "Software People Bangladesh")
+        public FileProcessorController(string repositoryPath, string oldCompanyName , string newCompanyName)
         {
             RepositoryPath = repositoryPath;
             MatchString = oldCompanyName;
