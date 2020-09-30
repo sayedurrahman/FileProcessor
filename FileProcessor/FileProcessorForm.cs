@@ -13,13 +13,17 @@ namespace FileProcessor
 
         private async void replaceButton_Click(object sender, EventArgs e)
         {
-            string targetString = string.IsNullOrWhiteSpace(targetTextBox.Text) ? "Software People" : targetTextBox.Text;
-            string replaceString = string.IsNullOrWhiteSpace(replaceTextBox.Text) ? "Software People Bangladesh" : replaceTextBox.Text;
+            timeEndLabel.Text = "";
+
+            string targetString = string.IsNullOrWhiteSpace(targetTextBox.Text) ? "SoftwarePeople" : targetTextBox.Text;
+            string replaceString = string.IsNullOrWhiteSpace(replaceTextBox.Text) ? "SoftwarePeople Bangladesh" : replaceTextBox.Text;
             var controller = new Service.FileProcessorController(repoFolderBrowserDialog.SelectedPath, targetString, replaceString);
-            
+            timeStartLlabel.Text = $"Start - {DateTime.Now.ToString("HH:mm:ss")}";
+            Cursor = Cursors.WaitCursor;
+
             // Release the UIThread
             await Task.Run(() => controller.UpdateTextInFiles());
-            
+            timeEndLabel.Text = $"End - {DateTime.Now.ToString("HH:mm:ss")}";
             ResetControls();
         }
 
@@ -54,6 +58,7 @@ namespace FileProcessor
             repoPathTextBox.Text = "";
             targetTextBox.Text = "";
             replaceTextBox.Text = "";
+            Cursor = Cursors.Arrow;
         }
     }
 }
