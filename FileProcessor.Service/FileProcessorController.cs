@@ -1,4 +1,5 @@
 ﻿using FileProcessor.Service.Classes;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -16,21 +17,29 @@ namespace FileProcessor.Service
             ReplaceString = replaceText;
         }
 
-        public async Task UpdateTextInFile()
+        public async Task UpdateTextInFiles()
         {
             if (Directory.Exists(FolderPath))
             {
+                List<Task> tasks = new List<Task>();
                 foreach (string fileName in Directory.GetFiles(FolderPath))
                 {
-                    FileInfo fileInfo = new FileInfo(fileName);
-                    CompanyFile file = FileFactory.GetInstance(fileInfo.Extension);
-                    if (file != null)
-                    {
-                        file.Load(fileInfo.FullName);
-                        file.ReplaceText(TargetString, ReplaceString);
-                        file.Save(fileInfo.FullName);
-                    }
+                    tasks.Add(ReplaceTextInFile(fileName));
                 }
+
+                await Task.WhenAll(tasks);
+            }
+        }
+
+        public async Task ReplaceTextInFile(string fileName)
+        {
+            FileInfo fileInfo = new FileInfo(fileName);
+            CompanyFile file = FileFactory.GetInstance(fileInfo.Extension);
+            if (file != null)
+            {
+                file.Load(fileInfo.FullName);
+                file.ReplaceText(TargetString, ReplaceString);
+                file.Save(fileInfo.FullName);
             }
         }
     }

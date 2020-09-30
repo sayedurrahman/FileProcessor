@@ -18,7 +18,7 @@ namespace FileProcessor
             var controller = new Service.FileProcessorController(repoFolderBrowserDialog.SelectedPath, targetString, replaceString);
             
             // Release the UIThread
-            await Task.Run(() => controller.UpdateTextInFile());
+            await Task.Run(() => controller.UpdateTextInFiles());
             
             ResetControls();
         }
