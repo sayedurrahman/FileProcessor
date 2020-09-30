@@ -24,7 +24,7 @@ namespace FileProcessor.Service
                 List<Task> tasks = new List<Task>();
                 foreach (string fileName in Directory.GetFiles(FolderPath))
                 {
-                    tasks.Add(ReplaceTextInFile(fileName));
+                    tasks.Add(Task.Run(() => ReplaceTextInFile(fileName)));
                 }
 
                 await Task.WhenAll(tasks);
