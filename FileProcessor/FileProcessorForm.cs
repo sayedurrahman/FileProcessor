@@ -18,12 +18,12 @@ namespace FileProcessor
             string targetString = string.IsNullOrWhiteSpace(targetTextBox.Text) ? "SoftwarePeople" : targetTextBox.Text;
             string replaceString = string.IsNullOrWhiteSpace(replaceTextBox.Text) ? "SoftwarePeople Bangladesh" : replaceTextBox.Text;
             var controller = new Service.FileProcessorController(repoFolderBrowserDialog.SelectedPath, targetString, replaceString);
-            timeStartLlabel.Text = $"Start - {DateTime.Now.ToString("HH:mm:ss")}";
+            timeStartLlabel.Text = $"Start-{DateTime.Now.ToString("HH:mm:ss")}";
             Cursor = Cursors.WaitCursor;
 
             // Release the UIThread
             await Task.Run(() => controller.UpdateTextInFiles());
-            timeEndLabel.Text = $"End - {DateTime.Now.ToString("HH:mm:ss")}";
+            timeEndLabel.Text = $"End-{DateTime.Now.ToString("HH:mm:ss")}";
             ResetControls();
         }
 
