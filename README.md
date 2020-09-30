@@ -16,9 +16,8 @@ It is a string replacer. It can replace target string with replace string.
 
 ![FileProcessor Timing](/Timing.png)
 
-#In short
-
-** Any text, Any file type, Any number of files, Folder with mix type**
+# In short
+**Any text, Any file type, Any number of files, Folder with mix type**
 
 # How to run
 * Clone or download the repository
