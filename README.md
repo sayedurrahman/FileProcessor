@@ -14,11 +14,11 @@ It is a string replacer. It can replace target string with replace string.
 * Supports recurring replacement on the same file. Even Replace string has the Target string. I.e. Target = SoftwarePeople, Replace = SoftwarePeople Bangladesh
 * It can process 1500 word files in 56 sec. You can find 1500 word docs in the root of the repo.
 
-![FileProcessor Timing(/Timing.png)
+![FileProcessor Timing](/Timing.png)
 
 #In short
 
-** Any text, Any file type, Any number of files, Folder with mix type*
+** Any text, Any file type, Any number of files, Folder with mix type**
 
 # How to run
 * Clone or download the repository
