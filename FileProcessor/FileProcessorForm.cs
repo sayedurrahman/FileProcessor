@@ -24,6 +24,7 @@ namespace FileProcessor
             // Release the UIThread
             await Task.Run(() => controller.UpdateTextInFiles());
             timeEndLabel.Text = $"End-{DateTime.Now.ToString("HH:mm:ss")}";
+
             ResetControls();
         }
 
